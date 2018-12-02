@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,14 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            Load();
+        }
+
+        private void Load()
+        {
+            var t = new ProjektEntities();
+            
+            myGrid.ItemsSource =t.Students.ToList();
         }
     }
 }
