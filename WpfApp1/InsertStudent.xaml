@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfApp1.InsertStudent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="InsertStudent" Height="450" Width="800">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="89,76,0,0" TextWrapping="Wrap" Text="Add student" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="89,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="First name"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="89,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.048,-1.779"><Run Text="Last name"/><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="firstName" HorizontalAlignment="Left" Height="23" Margin="162,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="yearComboBox" HorizontalAlignment="Left" Margin="162,200,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBox.Items>
+                <ComboBoxItem>2017</ComboBoxItem>
+                <ComboBoxItem>2018</ComboBoxItem>
+            </ComboBox.Items>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="89,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Card number"/><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="lastName" HorizontalAlignment="Left" Height="23" Margin="162,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="89,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.048,-1.779"><Run Text="Last name"/><LineBreak/><Run/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="162,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="89,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.048,-1.779" Text="Year"/>
+        <TextBox x:Name="cardNumber" HorizontalAlignment="Left" Height="23" Margin="162,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="insertButton"  Content="Insert" HorizontalAlignment="Left" Margin="182,244,0,0" VerticalAlignment="Top" Width="75" Click="InsertButton_Click"/>
+
+    </Grid>
+</Window>

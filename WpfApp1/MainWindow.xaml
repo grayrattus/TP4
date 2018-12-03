@@ -7,10 +7,26 @@
         Title="MainWindow" Height="450" Width="800">
     <DataGrid x:Name="myGrid" x:FieldModifier="public" AutoGenerateColumns="False" ColumnWidth="*">
         <DataGrid.Columns>
-            <DataGridTextColumn x:Name="Id" Binding="{Binding id}" Header="Name" Width="SizeToHeader"/>
-            <DataGridTextColumn x:Name="FirstName" Binding="{Binding FirstName}" Header="FirstName" Width="SizeToHeader"/>
-            <DataGridTextColumn x:Name="LastName" Binding="{Binding LastName}" Header="LastName" Width="SizeToHeader"/>
-            <DataGridTextColumn x:Name="CardNumber" Binding="{Binding CardNumber}" Header="CardNumber" Width="SizeToHeader"/>
+            <DataGridTextColumn x:Name="Id" Binding="{Binding id}" Header="Name" Width="SizeToHeader" IsReadOnly="True"/>
+            <DataGridTextColumn x:Name="FirstName" Binding="{Binding FirstName}" Header="FirstName" Width="SizeToHeader" IsReadOnly="True"/>
+            <DataGridTextColumn x:Name="LastName" Binding="{Binding LastName}" Header="LastName" Width="SizeToHeader" IsReadOnly="True"/>
+            <DataGridTextColumn x:Name="CardNumber" Binding="{Binding CardNumber}" Header="CardNumber" Width="SizeToHeader" IsReadOnly="True"/>
+            <DataGridTemplateColumn>
+                <DataGridTemplateColumn.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="Action"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.HeaderTemplate>
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="insertButton" Content="Insert" Click="InsertButton_Click" />
+                            <Button x:Name="updateButton" Content="Update" Click="UpdateButton_Click" />
+                            <Button x:Name="deleteButton" Content="Delete" Click="DeleteButton_Click" />
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
         </DataGrid.Columns>
     </DataGrid>
 </Window>

@@ -21,6 +21,9 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        ProjektEntities _database = new ProjektEntities();
+        public static DataGrid datagrid;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,9 +32,31 @@ namespace WpfApp1
 
         private void Load()
         {
-            var t = new ProjektEntities();
-            
-            myGrid.ItemsSource =t.Students.ToList();
+            myGrid.ItemsSource = _database.Students.ToList();
+            datagrid = myGrid;
+        }
+
+        private void InsertButton_Click(object sender, RoutedEventArgs e)
+        {
+            InsertStudent IStudent = new InsertStudent();
+            IStudent.ShowDialog();
+
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            int id = (myGrid.SelectedItem as Students).id;
+            UpdateStudent update = new UpdateStudent(id);
+            update.Show();
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            int Id = (myGrid.SelectedItem as Students).id;
+            Students deleteStudent = _database.Students.Where(s => s.id == Id).Single();
+            _database.Students.Remove(deleteStudent);
+            _database.SaveChanges();
+            myGrid.ItemsSource = _database.Students.ToList();
         }
     }
 }
