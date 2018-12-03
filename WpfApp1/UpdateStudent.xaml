@@ -19,7 +19,6 @@
         </ComboBox>
         <TextBlock HorizontalAlignment="Left" Margin="89,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Card number"/><LineBreak/><Run/></TextBlock>
         <TextBox x:Name="lastName" HorizontalAlignment="Left" Height="23" Margin="162,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="162,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="89,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.048,-1.779" Text="Year"/>
         <TextBox x:Name="cardNumber" HorizontalAlignment="Left" Height="23" Margin="162,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="updateButton"  Content="Update" HorizontalAlignment="Left" Margin="182,244,0,0" VerticalAlignment="Top" Width="75" Click="UpdateButton_Click"/>

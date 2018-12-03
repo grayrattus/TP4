@@ -38,10 +38,12 @@ namespace WpfApp1
             Students updateStudent = (from s in _database.Students
                                     where s.id == StudentToUpdate.id
                                     select s).Single();
+
             updateStudent.FirstName = firstName.Text;
             updateStudent.LastName = lastName.Text;
             updateStudent.CardNumber = Int32.Parse(cardNumber.Text);
             _database.SaveChanges();
+
             MainWindow.datagrid.ItemsSource = _database.Students.ToList();
             this.Hide();
         }
